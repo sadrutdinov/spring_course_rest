@@ -1,6 +1,6 @@
-package com.sai.spring.mvc_hibernate_aop.service;
+package com.sai.spring.rest.service;
 
-import com.sai.spring.mvc_hibernate_aop.entity.Employee;
+import com.sai.spring.rest.entity.Employee;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.sai.spring.mvc_hibernate_aop.entity;
+package com.sai.spring.rest.entity;
 
 import javax.persistence.*;
 
