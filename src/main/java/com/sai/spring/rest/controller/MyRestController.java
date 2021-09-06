@@ -28,30 +28,11 @@ public class MyRestController {
     public Employee getEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployee(id);
 
-        if(employee == null) {
-            throw new NoSuchEmployeeException("There is no employee with ID = " + id +" in Database");
+        if (employee == null) {
+            throw new NoSuchEmployeeException("There is no employee with ID = " + id + " in Database");
         }
 
         return employee;
     }
-
-    @ExceptionHandler
-    public ResponseEntity<EmployeeIncorrectData> handleException(NoSuchEmployeeException exception) {
-        EmployeeIncorrectData data = new EmployeeIncorrectData();
-        data.setInfo(exception.getMessage());
-
-        return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<EmployeeIncorrectData> handleException(Exception exception) {
-        EmployeeIncorrectData data = new EmployeeIncorrectData();
-        data.setInfo(exception.getMessage());
-
-        return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
-    }
-
-
-
 
 }
